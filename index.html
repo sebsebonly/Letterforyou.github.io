@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Letter for My Baby 💜</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #b087cc, #e5b2ff);
+      font-family: 'Segoe UI', sans-serif;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .heart {
+      position: fixed;
+      width: 15px;
+      height: 15px;
+      background: pink;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%) rotate(45deg);
+      animation: floatUp 6s linear infinite;
+      border-radius: 50%;
+      opacity: 0.7;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: pink;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) translateX(-50%) rotate(45deg); opacity: 1; }
+      100% { transform: translateY(-100vh) translateX(-50%) rotate(45deg); opacity: 0; }
+    }
+
+    .container {
+      padding: 60px 30px;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5em;
+      color: #fff3ff;
+      margin-bottom: 40px;
+    }
+
+    .typing p {
+      font-size: 1.2em;
+      line-height: 1.8;
+      opacity: 0;
+      transform: translateY(10px);
+      transition: all 0.6s ease;
+      margin-bottom: 20px;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 💜 Working Background Music -->
+  <audio autoplay loop>
+    <source src="https://dl.sndup.net/mvdr/Araw-Araw%20-%20Ben%20%26%20Ben.mp3" type="audio/mp3">
+  </audio>
+
+  <!-- ❤️ Floating Hearts -->
+  <div class="heart" style="left: 20%; animation-delay: 0s;"></div>
+  <div class="heart" style="left: 40%; animation-delay: 1s;"></div>
+  <div class="heart" style="left: 60%; animation-delay: 2s;"></div>
+  <div class="heart" style="left: 80%; animation-delay: 3s;"></div>
+
+  <!-- 💌 Love Letter -->
+  <div class="container">
+    <h1>To My One and Only 💜</h1>
+    <div class="typing" id="letter"></div>
+  </div>
+
+  <!-- ✨ Letter Content Script -->
+  <script>
+    const lines = [
+      "Hi baby,",
+      "",
+      "Alam mo ba, habang ginagawa ko itong love page na 'to, sobra akong nanginginig sa damdamin.",
+      "Kasi bawat letra, bawat salita, nilagay ko dito gamit puso ko, para lang sa'yo.",
+      "",
+      "Hindi mo lang alam kung gaano ako nagpapasalamat sa bawat araw na kasama ka.",
+      "Sa bawat simpleng good morning mo, sa mga 'ingat baby' mo, sa bawat tawanan at tampuhan natin.",
+      "",
+      "Minsan tahimik lang ako, pero sa isip ko, ikaw ang sigaw ng puso ko.",
+      "Minsan pagod ako, pero sa puso ko, ikaw ang pahinga.",
+      "",
+      "Baby, ako lang ba pipiliin mo hanggang dulo? Huhu 😔",
+      "Kasi ako, me sure na ako.",
+      "Sigurado na ako sa kung sino ang gusto kong makasama habang buhay.",
+      "",
+      "Ikaw ang pinili ko, at araw-araw, ikaw pa rin ang pipiliin ko.",
+      "Hindi dahil perpekto ka, kundi dahil kahit sa kahinaan mo, mas lalo kitang minahal.",
+      "",
+      "Kung sakaling dumating ang araw na magduda ka sa sarili mo, alalahanin mong may isang ako na handang ipaglaban ka.",
+      "Kahit ilang bagyo pa ang dumaan, kahit ilang luha pa ang bumagsak, hinding-hindi kita bibitawan.",
+      "",
+      "Sa mundong puno ng pagbabago, ikaw lang ang gusto kong manatili.",
+      "Ikaw lang ang gusto kong yakapin habang umuulan sa labas.",
+      "Ikaw lang ang gusto kong kasama sa bawat gising at sa bawat tulog.",
+      "",
+      "Mahal kita, hindi lang ngayon, kundi araw-araw.",
+      "Mahal kita sa paraang hindi matutumbasan ng salita, ng sulat, o ng kahit anong bagay sa mundo.",
+      "",
+      "Ikaw ang tahanan ko.",
+      "Ikaw ang dulo ng lahat ng panalangin ko.",
+      "Ikaw ang sagot sa lahat ng tanong ko noon.",
+      "At ikaw ang gusto kong makasama sa altar, sa kasal, at sa pagtanda.",
+      "",
+      "Baby, ikaw ang mahal ko.",
+      "At walang araw na lilipas na hindi ko pipiliing mahalin ka muli.",
+      "Kahit ilang beses pa akong masaktan, pipiliin pa rin kitang yakapin.",
+      "Kahit ilang beses pa akong maligaw, ikaw pa rin ang gusto kong balikan.",
+      "",
+      "At kahit ilang beses pa akong tanungin ng mundo, isa lang ang sagot ko:",
+      "Ikaw ang mahal ko.",
+      "Ikaw ang pipiliin ko.",
+      "Ikaw lang ang lalabanan ko ang lahat para lang makasama.",
+      "",
+      "Baby, alam kong hindi ako perpekto.",
+      "Pero ang pagmamahal ko sa'yo, buo.",
+      "Sana sa lahat ng ito, ramdam mo na ako lang ang lalaban para sa'yo hanggang dulo.",
+      "",
+      "Hindi kita iiwan kahit kailan.",
+      "Hindi ako susuko kahit anong pagod ko.",
+      "Hindi kita papalitan kahit gaano ka pa mahirap intindihin.",
+      "",
+      "Ako lang ‘to, umiibig ng totoo.",
+      "Ako lang ‘to, naniniwala sa 'tayo'.",
+      "Ako lang ‘to, pipiliin ka araw-araw, buong-buo, habang buhay.",
+      "",
+      "Mahal na mahal kita, baby.",
+      "Love,",
+      "Your forever and always 💍💜"
+    ];
+
+    const container = document.getElementById('letter');
+    lines.forEach((line, i) => {
+      const p = document.createElement('p');
+      p.textContent = line;
+      p.style.transitionDelay = `${i * 0.3}s`;
+      container.appendChild(p);
+      setTimeout(() => {
+        p.style.opacity = 1;
+        p.style.transform = 'translateY(0)';
+      }, 100);
+    });
+  </script>
+</body>
+</html>
